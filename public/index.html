@@ -4,17 +4,74 @@
   <meta charset="UTF-8">
   <title>MP1 Starter</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
-  <h1>Hello World!</h1>
-  <div class="test"> My name is Anthony.</div>
-  <div class="cat">
-    <img src="./media/cat.jpg" alt="Cat">
-  </div>
 
   <script src="lib/jquery-2.1.3.min/index.js"></script>
   <script src="js/script.js"></script>
   <script src="http://localhost:35729/livereload.js"></script>
+
+
+        <div id="sidebar">
+            <div id="nav-anchor"></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#mountains">Mountains</a></li>
+                    <li><a href="#tickets">Tickets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div><!-- /sidebar -->
+
+
+      <div id="content">
+            <section id="home" >
+              <br>
+              <br>
+              <br>
+              <br><br><br><br><br><br><br><br><br>
+                Welcome to skiTropolis! The all-in-one solution to optimizing your ski trip!
+            </section>
+            <section id="about">
+                The only online tool that lets you optimize your mountain search based on your preferences! Instead of just looking for the cheapest lift tickets skiTropolis uses an algorithm to factor in driving distance as well as percentage of trails open to lead to the optimal skiing experience!
+            </section>
+            <section id="mountains">
+                Here is a list of clickable mountains
+            </section>
+            <section id="tickets">
+                Here are some links to sites to buy tickets
+                <div class="carousel" id="carousel">
+                  <div class="carousel inner">
+                    <div class="slide" id="slide0">
+                    </div>
+                    <div class="slide" id="slide1">
+                    </div>
+                    <div class="slide" id="slide2">
+                    </div>
+                  </div>
+                  <div class="arrow arrow-left" id="left-arrow"></div>
+                  <div class="arrow arrow-right" id="right-arrow"></div>
+                </div>
+            </section>
+            <section id="contact">
+                Here is a fake email address
+            </section>
+            <!-- should probably move footer -->
+            <footer>
+              <!--
+              <video width="100%">
+                <source src="./media/ski_site_resources/One of those days 2 - Candide Thovex.mp4" type="video/mp4" controls>
+              </video>
+            -->
+              <p>hi</p>
+            </footer>
+        </div><!-- /#content -->
+
 </body>
+
 </html>
