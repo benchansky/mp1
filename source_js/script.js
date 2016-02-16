@@ -418,138 +418,35 @@ $('.carousel').Zippy(args);
 
 
 
+//modal controls:
+// Get the modal
+var modal = document.getElementById('myModal');
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
 
-$("#slider").on("scroll", function() {
-  $(".slides").css({
-    "background-position": $(this).scrollLeft()/6-100+ "px 0"
-  });  
-});
-
-var slider = {
-  
-  el: {
-    slider: $("#slider"),
-    allSlides: $(".slide"),
-    sliderNav: $(".slider-nav"),
-    allNavButtons: $(".slider-nav > a"),
-    arrows: $(".arrow")
-  },
-  
-  timing: 800,
-  slideWidth: 300, // could measure this
-  slideCount:0,
-  
-  init: function() {
-    // You can either manually scroll...
-    this.el.slider.on("scroll", function(event) {
-      slider.moveSlidePosition(event);
-    });
-    // ... or click a thing
-    this.el.sliderNav.on("click", "a", function(event) {
-      slider.handleNavClick(event, this);
-    });
-
-    this.el.arrows.on("click", function(event){
-			slider.handleArrowClick(event, this);
-		});
-  },
-  
-  moveSlidePosition: function(event) {
-    // Magic Numbers
-    this.el.allSlides.css({
-      "background-position": $(event.target).scrollLeft()/6-100+ "px 0"
-    });  
-  },
-  
-  handleNavClick: function(event, el) {
-    // Don't change URL to a hash, remove if you want that
-    event.preventDefault();
-
-    // Get "1" from "#slide-1", for example
-    var position = $(el).attr("href").split("-").pop();
-    
-    this.el.slider.animate({
-      scrollLeft: position * this.slideWidth
-    }, this.timing);
-    
-    this.changeActiveNav(el);
-  },
-
-  	handleArrowClick: function(event, el){
-		event.preventDefault();
-		var position =$(el).attr("id");
-		if(position=="right-arrow"){
-			console.log("right");
-			this.slideCount+=1
-		} else{
-			console.log("left");
-			this.slideCount-=1
-		}
-
-		 
-		 if (this.slideCount<0) {
-		 	this.slideCount=2;
-		 }
-		 if (this.slideCount>2){
-		 	this.slideCount=0;
-		 }
-		 var index=this.slideCount;
-		    this.el.slider.animate({
-		      scrollLeft: index * this.slideWidth
-		    }, this.timing);
-		    
-		    this.changeActiveNav(el);
-		
-	},
-  
-  changeActiveNav: function(el) {
-    // Remove active from all links
-    this.el.allNavButtons.removeClass("active");
-    // Add back to the one that was pressed
-    $(el).addClass("active");
-  }
-  
-};
-
-slider.init();
+$(".col").click(function(evn){
+	evn.preventDefault();
+	modal.style.display = "block";
+}); 
 
 
-var carousel ={
-	el:{
-		carousel: $("#carousel"),
-		allSlides: $(".slide"),
-		arrows: $(".arrow")
-	},
-	slideWidth:1000,
-	timing:800,
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
 
-	init: function() {
-		this.el.arrows.on("click", function(event){
-			carousel.handleNavClick(event, this);
-		});
-	},
-	
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
-	handleNavClick: function(event, el){
-		event.preventDefault();
-		var position =$(el).attr("id");
-		if(position=="right-arrow"){
-			console.log("right");
-			this.el.carousel.animate({
-				scrollRight: position*this.slideWidth
-			}, this.timing);
-		} else{
-			console.log("left");
-			this.el.carousel.animate({
-				scrollLeft: position*this.slideWidth
-			}, this.timing);
-		}
-		
-	}
 
-};
-carousel.init();
+
+
+
 
 /** 
 * this part locks and unlocks the nav bar
@@ -578,6 +475,8 @@ $("nav a").click(function(evn){
 	}, 1000);
 	return false;
 }); 
+
+
 
 
 
