@@ -31,11 +31,11 @@ li {
 }
 
 section {
-	background: lighten($blue, 25);
+	background: lighten(white, 25);
   overflow:hidden;
 	height: 100% 
 }
-section:nth-child(odd) { background: white; height: 100%;}
+section:nth-child(odd) { background: $blue; height: 100%;}
 
 ul.mountain_list {
     -moz-column-count: 3;
@@ -290,27 +290,18 @@ nav:hover { opacity: 1; }
   background-size:cover;
 }
 
-h1{
-  width:100px;
-  height:100px;
-  background-color:rgba(146, 45, 141,0.7);
-  margin:auto;
-  line-height:100px;
-  color:#fff;
-  font-size:2.4em;
-  border-radius:50%;
-}
+
 
 .slide:nth-child(1){
-  background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/163697/slide-1.jpg);
+  background-image:url("../media/ski_site_resources/big_ski_pic.jpeg");
  }
 
 .slide:nth-child(2){
-  background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/163697/slide-2.jpg);
+  background-image:url("../media/ski_site_resources/big_ski_pic_two.jpg");
 }
 
 .slide:nth-child(3){
-  background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/163697/slide-3.jpg);
+  background-image:url("../media/ski_site_resources/big_ski_pic_three.jpg");
  }
 
  .greeting{
@@ -319,8 +310,17 @@ h1{
   left: 0;
   z-index:0;
   width:100%;
-  padding-top: 32%;
+  height:100%;
+  //padding-top: %;
   background-image:url("../media/ski_site_resources/okemo_chairlift.jpg");
+  background-size: cover;
+ }
+
+ .greeting_container {
+  position:relative;
+  height:100%;
+  width:100%;
+  overflow:hidden;
  }
 
 
@@ -367,6 +367,24 @@ h1{
 }
 
 
+//vertically align
+.vid_div {
+    position:relative;
+    height:100%;
+    
+}
+video {
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin:auto;
+    left:0; 
+    right:0;
+}
+.video {
+    min-height:50px
+}
+
 //CSS3 animation stuff:
 .trickyP {
   animation-duration: 1s;
@@ -387,20 +405,4 @@ h1{
 }
 
 
-//vertically align
-.vid_div {
-    position:relative;
-    height:100%;
-    
-}
-video {
-    position:absolute;
-    top:0;
-    bottom:0;
-    margin:auto;
-    left:0; 
-    right:0;
-}
-.video {
-    min-height:50px
-}
+
