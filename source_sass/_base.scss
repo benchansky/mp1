@@ -300,6 +300,10 @@ video {
     min-height:50px
 }
 
+.anim_contain {
+  overflow:hidden
+}
+
 //CSS3 animation stuff:
 .trickyP {
   animation-duration: 1s;
